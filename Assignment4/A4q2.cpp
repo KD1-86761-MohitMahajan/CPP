@@ -12,22 +12,22 @@ public:
     {
         top = -1;
         size = num;
-        ptr = new int[num];
+        ptr = new int[num]; // dynamic array declaration
     }
-    Stack()
+    Stack() // parameterless constructor
     {
         top = -1;
         size = 5;
         ptr = new int[5];
     }
-    bool isEmpty()
+    bool isEmpty() // to check if stack is empty
     {
         if (top == -1)
             return true;
         else
             return false;
     }
-    bool isFull()
+    bool isFull() // to check if stack is full 
     {
         // cout<<"is full"<<endl;
         // cout<<"top : "<<top<<"  range : "<<range<<endl;
@@ -36,7 +36,7 @@ public:
         else
             return true;
     }
-    void peek()
+    void peek() // to return the element on the top of the stack
     {
         if (isEmpty())
             cout << "Stack is empty" << endl;
@@ -45,11 +45,10 @@ public:
     }
     void push(int n)
     {
-        // cout<<"Hallo"<<endl;
         if (isFull())
         {
             top++;
-            ptr[top] = n;
+            ptr[top] = n; // in the ptr add add position of top i.e (-1)++
             cout << "Item Pushed on stack :" << n << endl;
             // cout<<"top : "<<top<<"  range : "<<range<<endl;
         }
@@ -64,7 +63,7 @@ public:
         for (int i = top; i >= 0; i--)
             cout << "\t[ " << i << " ] : " << ptr[i] << endl;
     }
-    void pop()
+    void pop() // to remove the top element from stack.
     {
         int n;
         if (top != -1)
